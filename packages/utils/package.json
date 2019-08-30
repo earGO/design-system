@@ -1,24 +1,22 @@
 {
   "name": "@design-system/utils",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Utils for other modules",
   "main": "src/index.js",
+  "module": "src/index.js",
   "scripts": {
-    "clean": "rm -rf node_modules dist build",
-    "build": "yarn clean && webpack -p"
+    "clean": "rm -rf node_modules dist build lib",
+    "build": "yarn babelify",
+    "babelify": "yarn clean && babel src --out-dir build"
   },
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
+  "dependencies": {
     "ramda": "0.26.1"
   },
-  "devDependencies": {
-    "ramda": "0.26.1",
-    "@babel/core": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-import": "^1.12.0",
-    "core-js": "3"
-  }
+  "files": [
+    "build"
+  ]
 }

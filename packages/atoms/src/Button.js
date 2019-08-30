@@ -255,8 +255,7 @@ Button.defaultProps = {
   size: 'medium',
   circle: false,
   block: false,
-  /** @ignore */
-  theme: theme
+  theme
 }
 
 Button.displayName = 'Button'

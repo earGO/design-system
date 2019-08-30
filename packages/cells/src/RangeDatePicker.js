@@ -1,6 +1,6 @@
-import React, {useState, useRef} from 'react'
+import React, { useRef} from 'react'
 import PropTypes from 'prop-types'
-import {Flex, Button, Box, Icon} from '@design-system/atoms'
+import {Flex,  Box } from '@design-system/atoms'
 import moment from 'moment'
 import 'moment/locale/ru'
 import ru_RU from 'antd/lib/locale-provider/ru_RU'

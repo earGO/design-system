@@ -10,8 +10,8 @@ const Container = styled(Flex)`
   align-items: center;
   cursor: pointer;
   transition: all;
-  transition-timing-function: ${props.theme.timingFunctions.easeInOut};
-  transition-duration: ${props.theme.duration.fast};
+  transition-timing-function: ${props=>props.theme.timingFunctions.easeInOut};
+  transition-duration: ${props=>props.theme.duration.fast};
   &:hover {
     transform: scale(1.0005);
     opacity: 0.75;
@@ -35,7 +35,7 @@ const LabeledIconButton = ({
   ...props
 }) => {
   return (
-    <Container onClick={onClick} {...props.theme}>
+    <Container onClick={onClick} {...props}>
       <Icon name={iconName} color={color} size={size} {...props.theme} />
       <TextBordered size={size} {...props}>
         <Text color={color} fontSize={fontSize}>

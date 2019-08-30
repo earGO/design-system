@@ -54,6 +54,7 @@ function AnimatedSearchInput({
         onChange={handleChange}
         shrinkWidth={shrinkWidth}
         growWidth={growWidth}
+        {...props}
       />
     </Box>
   )

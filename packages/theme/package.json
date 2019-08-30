@@ -1,26 +1,23 @@
 {
   "name": "@design-system/theme",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf node_modules dist build",
-    "build": "yarn clean && webpack -p"
+    "clean": "rm -rf node_modules dist build lib",
+    "build": "yarn babelify",
+    "babelify": "yarn clean && babel src --out-dir build"
   },
   "peerDependencies": {
     "color": "3.1.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
-  "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-import": "^1.12.0",
-    "color": "3.1.2",
-    "core-js": "3"
-  },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

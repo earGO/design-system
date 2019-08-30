@@ -4,9 +4,6 @@ const commonjs = require('rollup-plugin-commonjs')
 const json = require('rollup-plugin-json')
 const external = require('rollup-plugin-peer-deps-external')
 const url = require('rollup-plugin-url')
-// const peerDepsExternal = require('rollup-plugin-peer-deps-external')
-
-// import { terser } from 'rollup-plugin-terser'
 const postcss = require('rollup-plugin-postcss')
 
 const pkg = require('./package.json')

@@ -139,7 +139,8 @@ Divider.propTypes = {
 }
 
 Divider.defaultProps = {
-  color: 'border'
+  color: 'border',
+  theme
 }
 
 export default Divider

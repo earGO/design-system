@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Box from './Box'
 import {top, bottom, left, right, zIndex} from 'styled-system'
 
+
 /**
  * Применяется для абсолютного позиционирования.
  * Обычно используется в качестве потомка для компонента `<Relative />`.

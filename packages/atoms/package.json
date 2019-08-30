@@ -1,41 +1,43 @@
 {
   "name": "@design-system/atoms",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 9009",
     "build-storybook": "cd storybook && build-storybook",
-    "clean": "rm -rf node_modules dist build",
-    "build": "yarn clean && webpack -p"
+    "clean": "rm -rf node_modules dist build lib",
+    "build": "yarn babelify",
+    "babelify": "yarn clean && babel src --out-dir build && cp -a ./src/iconfonts ./build/iconfonts"
   },
   "dependencies": {
-    "react-custom-scrollbars": "^4.2.1",
-    "react-select": "3.0.4",
+    "@styled-system/theme-get": "^5.1.1",
     "hex-rgb": "^4.1.0",
+    "lodash": "^4.17.15",
+    "material-icons-react": "^1.0.4",
+    "rc-form": "^2.4.8",
+    "react-custom-scrollbars": "^4.2.1",
     "react-modal": "^3.10.1",
+    "react-select": "3.0.4",
     "react-tiny-popover": "^3.4.5",
     "react-window": "^1.8.5",
-    "@styled-system/theme-get": "^5.1.1"
+    "rsuite-table": "^3.5.6"
   },
   "peerDependencies": {
     "@design-system/theme": "^2.0.0",
     "@react-workspaces/react-scripts": "3.0.0-alpha-04",
     "cross-env": "5.0.5",
-    "material-icons-react": "^1.0.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-input-autosize": "2.2.1",
-    "rsuite-table": "^3.5.4",
     "style-loader": "^0.23.1",
     "styled-components": "^4.3.2",
     "styled-system": "^5.0.15",
     "stylis-rule-sheet": "0.0.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@design-system/theme": "^2.0.0",
+    "@design-system/theme": "^2.2.0",
     "@react-workspaces/react-scripts": "3.0.0-alpha-04",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-info": "^5.1.9",
@@ -45,17 +47,12 @@
     "@storybook/react": "^5.0.10",
     "@storybook/theming": "^5.0.10",
     "@testing-library/react": "^8.0.5",
-    "babel-loader": "^8.0.6",
-    "core-js": "3",
     "cross-env": "5.0.5",
     "css-loader": "^3.1.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
     "jest-styled-components": "^6.3.3",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
-    "postcss-loader": "^3.0.0",
     "react-docgen": "^4.1.1",
     "react-input-autosize": "2.2.1",
     "react-redux": "^7.1.0",
@@ -86,5 +83,8 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

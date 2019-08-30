@@ -6,6 +6,7 @@ import Flex from './Flex'
 import Relative from './Relative'
 import Icon from './Icon'
 import themeGet from '@styled-system/theme-get'
+import theme from '@design-system/theme'
 
 const noop = () => {}
 
@@ -136,7 +137,8 @@ CollapsePanel.propTypes = {
 CollapsePanel.defaultProps = {
   disabled: false,
   title: '',
-  titleAlignment: 'flex-start'
+  titleAlignment: 'flex-start',
+  theme
 }
 
 CollapsePanel.displayName = 'Collapse.Panel'

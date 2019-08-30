@@ -3,6 +3,7 @@ import propTypes from 'prop-types'
 import Box from './Box'
 import CollapsePanel from './CollapsePanel'
 
+
 /** Используется, если необходимо сгруппировать или скрыть большое количество содержимого. */
 class Collapse extends React.Component {
   constructor(props) {

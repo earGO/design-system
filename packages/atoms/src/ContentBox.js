@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Flex from './Flex'
 import styled from 'styled-components'
 
+
 /**
  * Специализированный компонент для позиционирования крупных блоков по центру страницы
  * и ограничения их ширины. Применяется ещё и для ограничения ширины блоков внутри сетки

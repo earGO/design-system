@@ -1,84 +1,38 @@
 {
   "name": "@design-system/cells",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "license": "MIT",
   "scripts": {
     "storybook": "start-storybook -p 9009",
     "build-storybook": "cd storybook && build-storybook",
-    "clean": "rm -rf node_modules dist build",
-    "build": "yarn clean && webpack -p"
+    "clean": "rm -rf node_modules dist build lib",
+    "build": "yarn babelify",
+    "babelify": "yarn clean && babel src --out-dir build"
+  },
+  "dependencies": {
+    "antd": "^3.22.2",
+    "moment": "^2.24.0"
   },
   "peerDependencies": {
+    "@design-system/atoms": "^2.0.0",
+    "@design-system/theme": "^2.0.0",
+    "@design-system/utils": "^2.0.0",
+    "antd": "^3.20.7",
+    "cross-env": "5.0.5",
+    "material-icons-react": "^1.0.4",
+    "moment": "2.24.0",
+    "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "material-icons-react": "^1.0.4",
     "react-input-autosize": "2.2.1",
     "react-select": "3.0.4",
     "rsuite-table": "^3.5.4",
-    "style-loader": "^0.23.1",
-    "styled-components": "^4.3.2",
-    "styled-system": "^5.0.15",
-    "stylis-rule-sheet": "0.0.10",
-    "@design-system/theme": "^2.0.0",
-    "cross-env": "5.0.5",
-    "@design-system/atoms": "^2.0.0",
-    "@design-system/utils": "^2.0.0",
-    "antd": "^3.20.7",
-    "css-loader": "^3.1.0",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
-    "moment": "2.24.0",
-    "prop-types": "^15.7.2",
-    "shallowequal": "1.1.0"
-  },
-  "devDependencies": {
-    "material-icons-react": "^1.0.4",
-    "react-input-autosize": "2.2.1",
-    "react-select": "3.0.4",
-    "rsuite-table": "^3.5.4",
-    "style-loader": "^0.23.1",
-    "styled-components": "^4.3.2",
-    "styled-system": "^5.0.15",
-    "stylis-rule-sheet": "0.0.10",
-    "@design-system/theme": "^2.0.0",
-    "cross-env": "5.0.5",
-    "@design-system/atoms": "^2.0.0",
-    "@design-system/utils": "^2.0.0",
-    "antd": "^3.20.7",
-    "css-loader": "^3.1.0",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
-    "moment": "2.24.0",
-    "prop-types": "^15.7.2",
     "shallowequal": "1.1.0",
-    "@babel/core": "^7.5.5",
-    "@storybook/addon-actions": "^5.0.10",
-    "@storybook/addon-info": "^5.1.9",
-    "@storybook/addon-links": "^5.0.10",
-    "@storybook/addon-notes": "^5.1.9",
-    "@storybook/addons": "^5.0.10",
-    "@storybook/react": "^5.0.10",
-    "@storybook/theming": "^5.0.10",
-    "@testing-library/react": "^8.0.5",
-    "babel-loader": "^8.0.6",
-    "babel-plugin-import": "^1.12.0",
-    "core-js": "3",
-    "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.14.0",
-    "enzyme-to-json": "^3.3.5",
-    "jest-styled-components": "^6.3.3",
-    "postcss-loader": "^3.0.0",
-    "react-docgen": "^4.1.1",
-    "react-redux": "^7.1.0",
-    "react-test-renderer": "^16.8.6",
-    "redux-mock-store": "^1.5.3",
-    "sinon": "^7.3.2",
-    "storybook-styled-components": "^1.1.4",
-    "styled-normalize": "^8.0.6",
-    "svg-inline-loader": "^0.8.0",
-    "url-loader": "^2.0.1"
+    "styled-components": "^4.3.2",
+    "styled-system": "^5.0.15",
+    "stylis-rule-sheet": "0.0.10"
   },
   "babel": {
     "presets": [
@@ -98,5 +52,8 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

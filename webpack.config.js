@@ -1,76 +1,69 @@
-var path = require('path')
+const nodeExternals = require('webpack-node-externals');
 
-module.exports = async ({config}) => {
-  // Find Babel Loader
-  const babelRules = config.module.rules.filter(rule => {
-    let isBabelLoader = false
-
-    if (rule.loader && rule.loader.includes('babel-loader')) {
-      isBabelLoader = true
-    }
-
-    if (rule.use) {
-      rule.use.forEach(use => {
-        if (typeof use === 'string' && use.includes('babel-loader')) {
-          isBabelLoader = true
-        } else if (
-          typeof use === 'object' &&
-          use.loader &&
-          use.loader.includes('babel-loader')
-        ) {
-          isBabelLoader = true
+module.exports = {
+  mode: 'production',
+  entry: './lib/index.js',
+  target: "web",
+  devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            plugins: [
+              // '@babel/plugin-proposal-class-properties',
+              // '@babel/plugin-proposal-export-default-from',
+              // '@babel/plugin-transform-async-to-generator',
+              // '@babel/plugin-transform-runtime',
+              // 'babel-plugin-styled-components',
+              // 'inline-react-svg',
+              [
+                'import',
+                {libraryName: 'antd', libraryDirectory: 'es', style: 'css'}
+              ]
+            ],
+            // presets: [
+            //   [
+            //     '@babel/preset-env',
+            //     {
+            //       useBuiltIns: 'entry',
+            //       corejs: 3
+            //     }
+            //   ],
+            //   '@babel/preset-react'
+            // ]
+          }
         }
-      })
-    }
-
-    return isBabelLoader
-  })
-
-  babelRules.forEach(rule => {
-    rule.include = /../
-    rule.exclude = /node_modules/
-  })
-
-  if (!config.module.rules) {
-    config.module.rules = []
-  }
-
-  config.module.rules.push({
-    test: /\.less$/,
-    use: [
-      {
-        loader: 'style-loader' // creates style nodes from JS strings
       },
       {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 2
-        } // translates CSS into CommonJS
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       },
       {
-        loader: 'less-loader' // compiles Less to CSS
+        test: /\.less$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
       }
-    ],
-    include: [
-      path.resolve(__dirname, '../../../node_modules/*')
-      // path.resolve(__dirname, '../')
     ]
-  })
-
-  config.resolve.extensions.push('.less')
-
-  if (!config.resolve.modules) {
-    config.resolve.modules = []
+  },
+  externals: [nodeExternals()],
+  resolve: {
+    modules: ['node_modules'],
+    extensions: ['.js', '.json'],
+    symlinks: true
   }
-
-  config.resolve.modules = config.resolve.modules.concat([
-    path.resolve('./'),
-    path.resolve('./src'),
-    'node_modules',
-    'shared',
-    'src',
-    'build'
-  ])
-
-  return config
 }
