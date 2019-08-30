@@ -1,6 +1,6 @@
 {
   "name": "@design-system/molecules",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "license": "MIT",
@@ -29,16 +29,10 @@
     "styled-system": "^5.0.15"
   },
   "devDependencies": {
-    "@design-system/atoms": "^2.0.0",
-    "@design-system/theme": "^2.0.0",
-    "@react-workspaces/react-scripts": "3.0.0-alpha-04",
-    "add-dom-event-listener": "1.1.0",
-    "classnames": "2.2.6",
-    "rc-trigger": "^2.6.5",
-    "react-select": "3.0.4",
-    "styled-components": "^4.3.2",
-    "styled-system": "^5.0.15",
     "@babel/core": "^7.5.5",
+    "@design-system/atoms": "^2.2.0",
+    "@design-system/theme": "^2.2.0",
+    "@react-workspaces/react-scripts": "3.0.0-alpha-04",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-info": "^5.1.9",
     "@storybook/addon-links": "^5.0.10",
@@ -47,7 +41,9 @@
     "@storybook/react": "^5.0.10",
     "@storybook/theming": "^5.0.10",
     "@testing-library/react": "^8.0.5",
+    "add-dom-event-listener": "1.1.0",
     "babel-loader": "^8.0.6",
+    "classnames": "2.2.6",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
@@ -55,15 +51,19 @@
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "postcss-loader": "^3.0.0",
+    "rc-trigger": "^2.6.5",
     "react-docgen": "^4.1.1",
     "react-redux": "^7.1.0",
+    "react-select": "3.0.4",
     "react-test-renderer": "^16.8.6",
     "redux-mock-store": "^1.5.3",
     "rsuite-table": "^3.5.4",
     "sinon": "^7.3.2",
     "storybook-styled-components": "^1.1.4",
     "style-loader": "^0.23.1",
+    "styled-components": "^4.3.2",
     "styled-normalize": "^8.0.6",
+    "styled-system": "^5.0.15",
     "svg-inline-loader": "^0.8.0",
     "url-loader": "^2.0.1"
   },
@@ -85,5 +85,8 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

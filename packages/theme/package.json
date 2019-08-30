@@ -1,6 +1,6 @@
 {
   "name": "@design-system/theme",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "license": "MIT",
@@ -14,9 +14,10 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
-  "devDependencies": {
-  },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }

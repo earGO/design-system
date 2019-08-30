@@ -1,6 +1,6 @@
 {
   "name": "@design-system/atoms",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "src/index.js",
   "module": "src/index.js",
   "license": "MIT",
@@ -37,7 +37,7 @@
     "stylis-rule-sheet": "0.0.10"
   },
   "devDependencies": {
-    "@design-system/theme": "^2.0.0",
+    "@design-system/theme": "^2.2.0",
     "@react-workspaces/react-scripts": "3.0.0-alpha-04",
     "@storybook/addon-actions": "^5.0.10",
     "@storybook/addon-info": "^5.1.9",
@@ -83,5 +83,8 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "files": [
+    "build"
+  ]
 }
